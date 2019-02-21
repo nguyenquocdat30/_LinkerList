@@ -6,14 +6,23 @@ LinkedList::LinkedList(void){
 }
 
 LinkedList::~LinkedList(void){
-  if(this->head != NULL){
-    delete this->head;
-    this->head = NULL;
+  Node *cur = NULL;
+  cur = this->head;
+  while(cur != NULL){
+    this->head = cur->GetNodeNext();
+    delete cur;
+    cur = this->head;
   }
 }
 
 void LinkedList::ShowList(void){
-  std::cout<<"Length"<< this->length<<endl;
+  std::cout<<"\n List data \n";
+  Node *cur = NULL;
+  cur = this->head;
+  while(cur != NULL){
+    std::cout<<cur->GetData()<<std::endl;
+    cur = cur->GetNodeNext();
+  }
 }
 
 void LinkedList::Add(int value){
