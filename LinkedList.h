@@ -2,7 +2,6 @@
 #define __LINKEDLIST_H__
 #include <iostream>
 #include "Node.h"
-using namespace std;
 
 class LinkedList{
 private:
